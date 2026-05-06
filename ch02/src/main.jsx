@@ -17,6 +17,7 @@ import App from './App.jsx'
  * 1. JSX를 리턴하는 함수
  * 2. 모듈화(부품)
  * 3. 매개변수는 properties (props) 라는 객체 하나만 허용한다.
+ * 4. 
  * g
  */
 
@@ -27,6 +28,7 @@ function PBox(){
   </div>
 }
 
+// function CBox({a, b, c, d}) 
 function CBox(props){
   console.log(props);
   const {a, b} = props;

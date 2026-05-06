@@ -1,0 +1,282 @@
+:root{
+    --primary: #4F6EF7;
+    --primary-hover: #3B58e0;
+    --primary-light: #eef1ff;
+    --success: #22c55e;
+    --error: #ef4444;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e6eb;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --radius: 12px;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #eef1ff 0%, #f0f4ff 50%, #e8ecff 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    padding: 24px;
+}
+
+/**/
+.card {
+    background: #fff ;
+    border-radius: 24px;
+    box-sizing: 0 8px 40px rgba(79, 110, 247, 0.12), 0 2px 8px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 440px;
+    padding: 48px 40px 40px;
+    animation: fadeUp 0.5s ease both;   /* both가 무임? */
+}   
+
+/* 애니메이션 fadeUp */
+@keyframes fadeUp {
+    from{opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translate(0);}
+}
+
+/* 로그를 어떻게 띄울 것인가 */
+.log    {
+    width:44px;
+    height: 44px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+/**/
+.log svg{
+    width :24px;
+    height: 24px;
+    fill: none;         /*이거 뭐임?*/
+    stroke: #fff;        /*이거 뭐임? */
+    stroke-width: 2.2;       /*이거 뭐임? */
+    stroke-linecap: round; /*이거 뭐임? */
+    stroke-linejoin: round; /*이거 뭐임? */
+}
+
+/**/
+h1{
+    font-size:22px;
+    font-width: 700; 
+    color: var(--gray-900);
+    margin-bottom: 6px;
+}
+
+/*부제*/
+.subtitle {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 32px;
+}
+
+/*그룹 */
+.form-gorup{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {display: flex; flex-direction: column; gap : 6px;}
+
+label{
+    font-size:13px;
+    font-weight: 600;
+    color: var(--gray-100-700);
+}
+
+.input-wrap{
+    position: relative;
+    display:flex;
+    align-items: center;
+}
+
+.input-wrap svg{
+    position: absolute;
+    left :14px;
+    width: 16px;
+    height: 16px;
+    stroke: var(--gray-400);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round ;
+    stroke-linejoin: round  ;
+    pointer-events: none;
+    transition: stroke 0.2s;
+
+}
+
+/*입력칸*/
+input{
+    width:100%;
+    height: 48px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 0 14px 0 42px;
+    font-size: inherit;
+    color: var(--gray-900);
+    background: var(--gray--50);
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+/*입력칸 포커스 시 발생*/
+input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(79, 110, 267, 0.12);
+}
+
+/*입력칸 포커스 시 발생하는데... 모르겠음*/
+input:focus + svg, .input-wrap:focus-within svg {stroke: var(--primary);}
+
+/**/
+input.valid { border-color: var(--success);}
+input.invalid { border-color: var(--error);}
+
+/*input에 입력할 데이터 값의 예제*/
+.hint{
+    font-size: 12px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 16px;
+    transition: color 0.2s;
+}
+
+/*힌트 OK시  색 변경*/
+.hint.ok { color:var(--success);}
+/*힌트 Error시 색 변경*/
+.hint.error{color:var(--error);}
+
+.row{display: flex; gap: 12px;}
+.row .field {flex: 1;}
+
+/* 비밀번호 강도 체크*/
+.strength-bar{
+    display:flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.strength-bar span{
+    flex:1;
+    height: 4px;
+    border-radius:99px;
+    background: var(--gray-200);
+    transition: background 0.3s;
+}
+
+.strength-bar.s1 span:nth-child(1) {background: var(--error);}
+.strength-bar.s2 span:nth-child(1), .strength-bar.s2 span:nth-child(2) {background: #f59e08;}
+.strength-bar.s3 span { background: var(--success);}
+
+/* 약관 */
+.terms{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s ;
+    user-select: none;
+}
+
+.terms:hover { border-color: var(--primary) ;background:var(--primary-light);}
+.terms.checked {border-color:var(--primary); background:var(--primary-light);}
+
+.term input[type="checkbox"] {display: none;}
+.checkbox-box {
+    width: 18px;
+    height: 18px;
+    border:2px solid var(--gray-300, #d1d5db);
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+
+}
+
+.terms.checked .checkbox-box{
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-box svg {display:none; width: 11px; height : 11px; stroke: #fff; fill:none; stroke-width: 2.5; storke-linecap: round;}
+.terms.checked .check-box svg {display:block;}
+.terms-text { font-size: 13px; color: var(--gary-700); line-height: 1.5;}
+.terms-text a {color:var(--primary); text-decoration: none; font-weight: 600;}
+
+/* 버튼 */
+.btn{
+    width: 100%;
+    height: 52px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 700;
+    font-family:inherit;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(79, 110, 247, 0.35);
+
+}
+
+.btn:hover { background: var(--primary-hover); box-shadow: 0 6px 20px rgba(79, 110, 247, 0.45);}
+.btn:active { transform: scale(0.98);}
+.btn:disabled { background: var(--gray-200); color: var(--gray-400); box-shadow:none; cursor: not-allowed;}
+
+.login-link{
+    text-align:center;
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top:20px;
+}
+.login-link a {color: var(--primary); font-weight: 600; text-decoration:  none;} 
+
+/* 성공 화면 */
+.success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:12px;
+    animation: fadeUp 0.5s ease both;
+
+}
+
+.success-screen.show   {display:flex;}
+.success-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.success-icon svg {width: 36px; height: 36px; stroke: var(--success); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;}
+.success-screen h2 { font-size: 20px; font-weight: 700; color: var(--gray-900);}
+.success-screen p { font-size: 14px; color: var(--gary-500); line-height: 1.6;}
+
+.leftpixel{
+    left:13px;
+}
