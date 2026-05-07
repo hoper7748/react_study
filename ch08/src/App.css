@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #191f28;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.logo h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #191f28;
+}
+
+.logo p {
+  color: #8b95a1;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4e5968;
+}
+
+.form-group input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #e5e8eb;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 16px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #b0b8c1;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1px solid #3182f6;
+  box-shadow: 0 0 0 4px rgba(49, 130, 246, 0.12);
+}
+
+.signup-btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 14px;
+  background: #3182f6;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: #1b64da;
+}
+
+.signup-btn:active {
+  transform: scale(0.98);
+}
+
+.table-box {
+  width: 100%;
+  max-width: 900px;
+  margin: 70px auto 0;
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.04),
+    0 6px 20px rgba(0,0,0,0.04);
+}
+
+.table-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #191f28;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-bottom: 2px solid #f2f4f6;
+}
+
+th {
+  padding: 18px;
+  text-align: left;
+  color: #4e5968;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+td {
+  padding: 18px;
+  border-bottom: 1px solid #f2f4f6;
+  color: #333d4b;
+  font-size: 15px;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  .table-box {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  .logo h1 {
+    font-size: 28px;
+  }
+}

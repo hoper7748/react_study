@@ -25,17 +25,30 @@ function App() {
 
 function Home() {
   console.log("Home");
-  return;
+  return (
+    <div>
+      <h2>HOME</h2>
+    </div>);
 }
 
 function Profile(){
   console.log("Profile");
-  return ;
+  return (
+  <>
+    <div>
+      <h2>Profile</h2>
+    </div>
+  </>);
 }
 
 function Setting() {
   console.log("Setting");
-  return;
+  return(
+  <>
+    <div>
+      <h2>Setting</h2>
+    </div>
+  </>);
 }
 
 export default App
