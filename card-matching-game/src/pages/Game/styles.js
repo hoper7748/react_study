@@ -12,7 +12,7 @@ export  const layout = css`
         box-sizing:border-box;
         padding:30px;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         
         & > h1{
             font-size: 50px;
@@ -56,7 +56,56 @@ export  const layout = css`
         padding:20px;
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.25);
+        /* background-color: rgba(255, 255, 255, 0.25); */
 
     }
-`
+`;
+
+export const centerCountainer = css`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+
+    & > h1 {
+        margin: 0 0;
+        font-size: 70px;
+        color: #fafafa;
+    }
+
+    @keyframes startButton {
+        0%{
+            transform: scale(100%);
+        }   
+        100%{   
+            transform: scale(110%);
+        }
+    }
+
+    & button{
+        border:none;
+        font-size: 50px;
+        font-family: 600;
+        color:transparent;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(90deg,rgba(115, 10, 36, 1) 0%, rgba(131, 166, 109, 1) 100%);
+        background-clip:text;
+        -webkit-backdrop-clip  : text;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        text-shadow:  0 0 10px #ffffff55;
+        animation-name: startButton;
+        animation-duration: 1s;
+        animation-timing-function: esae-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+        &:hover{
+            /* transform: scale(105%); */
+            animation-iteration-count: 0;
+            transform:scale(110%);
+        }
+    }
+`;  
