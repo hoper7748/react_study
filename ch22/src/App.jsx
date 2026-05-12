@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, Route, Routes } from "react-router";
 
 function P1(){
@@ -141,7 +142,7 @@ async function P5() {
 }
 
 function P6() {
-  const [ arr , setArr] = useState([]);
+  const [ arr , setArr] = useState();
 
   const getPromise1 = () => {
     return new Promise((resolve) => {
@@ -178,7 +179,7 @@ function P6() {
   }
 
   return <>
-    {/* <h1>{arr}</h1> */}
+    <h1>{arr}</h1>
     <button onClick={handleOnClick}>클릭</button>
   </>
 }
