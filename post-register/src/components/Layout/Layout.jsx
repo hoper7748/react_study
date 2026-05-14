@@ -1,13 +1,13 @@
-import { Link, Navigate } from "react-router";
+import { Link, Navigate, useLocation } from "react-router";
 import * as s from "./styles";
 
 function Layout({children}) {
     // const nav = navigate();
-    
+    const {pathname} = useLocation();
     return (
         <>
             <div css={s.layout}>
-                <div css={s.container(PiAlignCenterHorizontalSimple.startsWith("/auth/")? "none" : "full")} >
+                <div css={s.container(pathname.startsWith("/auth/")? "none" : "full")} >
                     {children}
                 </div>
             </div>

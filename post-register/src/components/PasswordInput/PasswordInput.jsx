@@ -2,7 +2,7 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import * as s from "./styles";
 import { useState } from "react";
 
-function PasswordInput ({title, name}) {
+function PasswordInput ({title, name, value, onChange}) {
 
     const [type, setType ] = useState("password");
 
@@ -16,7 +16,7 @@ function PasswordInput ({title, name}) {
                     <div>
                         {title}
                     </div>
-                    <input type={type} name={name} />
+                    <input type={type} name={name} value={value} onChange={onChange}/>
                     <div css={s.hidden} onClick={handleHiddenOnClick}>
                         {
                             type === "password"
