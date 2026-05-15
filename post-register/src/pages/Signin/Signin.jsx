@@ -7,6 +7,12 @@ import { useState } from "react";
 function Signin() {
     const navigate = useNavigate();
 
+    const keyValue = {
+        id: 1,
+        email: "test1234@gmail.com",
+        password:"1q2w3e4r!",
+        username:"홍길동",
+    };
 
     // 현재 field에 입력된 데이터를 state로 관리
     const [ inputValues, setIntValues ] = useState({
@@ -48,6 +54,7 @@ function Signin() {
 
     // 버튼 클릭 시 실행되는, 토큰 발사대
     const handleSigninOnClick = async () => {
+        // localStorage.setItem("users",JSON.stringify(keyValue) );
         try{
             const response = await requestSignin(inputValues.email, inputValues.password);
             localStorage.setItem("accessToken", response.data.accessToken);
